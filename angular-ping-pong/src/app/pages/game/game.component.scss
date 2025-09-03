@@ -1,0 +1,175 @@
+/* Game Wrapper */
+.game-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+  padding: 1rem;
+  background: radial-gradient(circle at center, #001a0a, #000);
+}
+
+/* HUD */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  width: 900px;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+
+  .hud-left,
+  .hud-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hud-center {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
+  }
+}
+
+/* Back Button */
+.back-btn {
+  background: transparent;
+  border: 2px solid #ff4d4d;
+  padding: 0.3rem 0.8rem;
+  color: #ff4d4d;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 8px #ff4d4d;
+
+  &:hover {
+    background: #ff4d4d;
+    color: black;
+    box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d;
+  }
+}
+
+/* Neon Buttons */
+button {
+  background: transparent;
+  border: 2px solid #00ffcc;
+  padding: 0.5rem 1.2rem;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
+
+  &:hover {
+    background: #00ffcc;
+    color: #000;
+    box-shadow: 0 0 30px #00ffcc, 0 0 50px #ff00ff;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* Dropdown */
+select {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00ffff;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff;
+
+  &:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff;
+  }
+}
+
+/* Table Container */
+.table-container {
+  position: relative;
+
+  canvas {
+    background: #007a33;
+    border: 8px solid white;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 128, 0.6);
+  }
+}
+
+/* Countdown Overlay */
+.countdown-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5rem;
+  font-weight: bold;
+  color: #00ffcc;
+  text-shadow: 0 0 20px #00ffcc, 0 0 40px #ff00ff;
+}
+
+/* Game Over Overlay */
+.gameover-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 30px #ff00ff;
+
+  h1 {
+    font-size: 3rem;
+    color: #ff00ff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px #ff00ff, 0 0 40px #00ffff;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+  }
+
+  .play-again-btn {
+    background: transparent;
+    border: 2px solid #00ffcc;
+    padding: 0.8rem 2rem;
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 0 15px #00ffcc, 0 0 25px #ff00ff;
+
+    &:hover {
+      background: #00ffcc;
+      color: #000;
+      box-shadow: 0 0 30px #00ffcc, 0 0 50px #ff00ff;
+    }
+  }
+}
+
+/* Hint */
+.hint {
+  margin-top: 1rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  text-align: center;
+}

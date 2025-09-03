@@ -1,0 +1,147 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Ping Pong Ball Animation */
+.pingpong-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  .ball {
+    width: 30px;
+    height: 30px;
+    background: #00ffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff;
+    animation: moveBall 6s infinite linear alternate;
+  }
+}
+
+@keyframes moveBall {
+  0%   { top: 5%; left: 5%;   background: #ff00ff; box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+  25%  { top: 5%; left: 90%;  background: #00ffff; box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+  50%  { top: 90%; left: 90%; background: #39ff14; box-shadow: 0 0 20px #39ff14, 0 0 40px #39ff14; }
+  75%  { top: 90%; left: 5%;  background: #ffff00; box-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00; }
+  100% { top: 5%; left: 5%;   background: #ff3131; box-shadow: 0 0 20px #ff3131, 0 0 40px #ff3131; }
+}
+
+/* Menu */
+.menu {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+
+  .title {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 40px #39ff14;
+  }
+
+  button {
+    display: block;
+    margin: 1rem auto;
+    padding: 1rem 2.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #00ffff;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px #00ffff, inset 0 0 10px #00ffff;
+
+    &:hover {
+      background: #00ffff;
+      color: black;
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+      transform: scale(1.05);
+    }
+  }
+}
+
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #001a0a, #000);
+
+  .title {
+    font-size: 3rem;
+    color: #00ffcc;
+    text-shadow: 0 0 20px #00ffcc, 0 0 40px #ff00ff;
+    margin-bottom: 2rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .menu {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    button {
+      background: transparent;
+      border: 2px solid #00ffcc;
+      padding: 1rem 2rem;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 10px #00ffcc, 0 0 20px #ff00ff;
+
+      &:hover {
+        background: #00ffcc;
+        color: #000;
+        box-shadow: 0 0 30px #00ffcc, 0 0 50px #ff00ff;
+      }
+    }
+  }
+
+  .instructions-card {
+    max-width: 700px;
+    padding: 2rem;
+    border: 2px solid #00ffff;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 25px #00ffff;
+    color: #fff;
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 0.6rem 0;
+        font-size: 1.1rem;
+        text-shadow: 0 0 5px #00ffff;
+      }
+    }
+  }
+}

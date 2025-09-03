@@ -1,0 +1,54 @@
+<div class="game-wrap">
+  <!-- HUD -->
+  <div class="hud">
+    <div class="hud-left">
+      <button class="back-btn" (click)="goBack()">← Back</button>
+      <label>
+        Difficulty:
+        <select [(ngModel)]="difficulty" (change)="onDifficultyChange()">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="hud-center">
+      <span class="score">{{ scoreLeft }}</span>
+      <span class="divider"> - </span>
+      <span class="score">{{ scoreRight }}</span>
+    </div>
+
+    <div class="hud-right">
+      <button (click)="togglePause()" [disabled]="gameOver">
+        {{ paused ? '▶ Resume' : '⏸ Pause' }}
+      </button>
+      <button (click)="startGame()">▶ Start</button>
+      <button (click)="restartGame()">🔄 Restart</button>
+    </div>
+  </div>
+
+  <!-- Game Table -->
+  <div class="table-container">
+    <canvas #gameCanvas width="900" height="540" (click)="resumeIfPaused()"></canvas>
+
+    <!-- Countdown -->
+    <div class="countdown-overlay" *ngIf="countdown > 0">
+      {{ countdown }}
+    </div>
+
+    <!-- Game Over -->
+    <div class="gameover-overlay" *ngIf="gameOver">
+      <h1>🏆 Game Over</h1>
+      <h2>{{ winner }} Wins!</h2>
+      <button class="play-again-btn" (click)="startGame()">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Hints -->
+  <div class="hint" *ngIf="!gameOver">
+    🖱 Click table or press <b>Space</b> to {{ paused ? 'resume' : 'pause' }} <br />
+    ⌨ Use <b>W/S</b> or <b>↑/↓</b> to move left paddle <br />
+    🎯 First to <b>10 points</b> wins!
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="hs">
+  <h2>High Scores</h2>
+  <table *ngIf="sorted().length; else none">
+    <thead>
+      <tr>
+        <th>#</th><th>Name</th><th>Score (You vs Opp)</th><th>Difficulty</th><th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sorted(); let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ s.name }}</td>
+        <td>{{ s.scoreLeft }} - {{ s.scoreRight }}</td>
+        <td>{{ s.difficulty }}</td>
+        <td>{{ s.dateISO | date:'medium' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #none><p>No scores yet. Play a game!</p></ng-template>
+</div>

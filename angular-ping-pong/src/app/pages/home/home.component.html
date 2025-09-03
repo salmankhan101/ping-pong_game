@@ -1,0 +1,21 @@
+<div class="home-container">
+  <h1 class="title">🏓 Ping Pong Challenge</h1>
+
+  <div class="menu">
+    <button [routerLink]="['/game']" [queryParams]="{ mode: 'ai' }">Play with Computer</button>
+    <button [routerLink]="['/game']" [queryParams]="{ mode: 'online' }">Two Player Online</button>
+    <button routerLink="/highscores">High Scores</button>
+  </div>
+
+  <div class="instructions-card">
+    <h2>How to Play</h2>
+    <ul>
+      <li>🎮 Control your paddle with <b>W/S</b> or <b>↑/↓</b> keys.</li>
+      <li>🏓 Ball auto-serves after each point.</li>
+      <li>⏸ Pause/Resume with <b>Space</b> key or Pause button.</li>
+      <li>🔄 Restart anytime with the Restart button.</li>
+      <li>🎯 First player to <b>10 points</b> wins the match!</li>
+      <li>👥 Play solo vs AI or challenge a friend online.</li>
+    </ul>
+  </div>
+</div>
